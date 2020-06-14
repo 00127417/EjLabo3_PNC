@@ -4,23 +4,49 @@
 <meta charset="ISO-8859-1">
 <title>Listado</title>
 </head>
+
 <body>
 
 <table>
 	<thead>
+		<th>Codigo</th>
 		<th>Nombre</th>
 		<th>Apellido</th>
-		<th>Carrera</th>
+		<th>Edad</th>
+		<th>Estado</th>
 	</thead>
-	<th:block th:each="estudiante, row:${studentList}">
+	<th:block th:each="estudiante, row:${estudiantes}">
 	<tr>
+		<th th:text="${estudiante.codigoEstudiante}">	
 		<th th:text="${estudiante.nombre}">
 		<th th:text="${estudiante.apellido}">
-		<th th:text="${estudiante.carrera}">
+		<th th:text="${estudiante.edad}">
+		<th th:text="${estudiante.delegateEstado}">
 	</tr>
 	
 	</th:block>
 </table>
-
+<br>
+<button onclick="window.location.href='/inicio'">VOLVER A INGRESAR</button><br>
+	<br><button onclick="window.location.href='/listado'">VER LISTADO COMPLETO</button><br>
+	<br>
+	<form action="/delete" method="post">
+		<label>Id estudiante a borrar</label>
+		<input type="number" name="codigo">
+		<input type="submit" value="BORRAR">
+	</form>
+	<br><br>
+	<form action="/filtrar" method="post">
+		<label>Nombre por el cual filtrar</label>
+		<input type="text" name="nombre">
+		<input type="submit" value="FILTRAR">
+	</form>
+<br><br>
+	<form action="/editar" method="post">
+		<label>Id Estudiante a modificar</label>
+		<input type="number" name="code">
+		<input type="submit" onclick="" value="EDITAR">
+	</form>
+	
 </body>
 </html>

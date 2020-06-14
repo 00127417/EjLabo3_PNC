@@ -6,7 +6,8 @@
 </head>
 <body>
 <h1>Estudiante</h1>
-<form th:action="@{/guardar}" th:object="${estudiante}" method="post">
+<form th:action="@{/editado}" th:object="${estudiante}" method="post">
+	<input type="number" th:field="*{codigoEstudiante}" hidden = "true"><br>
 	<label>Nombre: </label><input type="text" th:field="*{nombre}"><br>
 	<span th:errors="*{Nombre}" style="color:#E81505"></span><br>
 	<label>Apellido: </label><input type="text" th:field="*{apellido}"><br>
@@ -18,6 +19,5 @@
 	<br>
 	<input type="submit" value="GUARDAR">
 </form>
-<br><button onclick="window.location.href='/listado'">LISTADO</button>
 </body>
 </html>

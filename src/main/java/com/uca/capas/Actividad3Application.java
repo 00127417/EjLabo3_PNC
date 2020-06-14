@@ -1,4 +1,4 @@
-package com.uca.capas.actividad3;
+package com.uca.capas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
